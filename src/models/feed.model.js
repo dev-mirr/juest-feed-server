@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = (sequelize, DataTypes) => {
-  const Post = sequelize.define('Post', {
+  const Post = sequelize.define('Feed', {
     id: {
       allowNull: false,
       autoIncrement: true,
@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE,
     }
   }, {
-    tableName: 'posts',
+    tableName: 'feeds',
     timestamps: true,
   })
 
@@ -37,5 +37,5 @@ module.exports = (sequelize, DataTypes) => {
     // associations
   }
 
-  return Post
+  return Feed
 }
