@@ -1,2 +1,2 @@
-# juest-feed-server
+# just-feed-server
 feed
