@@ -2,14 +2,14 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('posts', {
+    return queryInterface.createTable('feeds', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER.UNSIGNED
       },
-      userUid: {
+      userUuid: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
@@ -17,7 +17,11 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      post: {
+      title: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      content: {
         allowNull: false,
         type: Sequelize.STRING
       },
@@ -33,6 +37,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('posts')
+    return queryInterface.dropTable('feeds')
   }
 }

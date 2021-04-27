@@ -40,7 +40,7 @@ const create = async (req, res, next) => {
     })
 
     if (!user) {
-      throw (createError(httpStatus.INTERNAL_SERVER_ERROR, '사용자 등록에 실패 했습니다.'))
+      throw (createError(httpStatus.INTERNAL_SERVER_ERROR, '사용자 등록에 실패했습니다.'))
     }
 
     return res

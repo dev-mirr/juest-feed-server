@@ -10,11 +10,13 @@ class UserRepo {
   async store(data) {
     const user = await models.User.create(data)
     await this.userCache.store(user)
+
     return UserWrapper.create(user)
   }
 
   async all() {
     const users = await models.User.findAll()
+
     return users.map(user => UserWrapper.create(user))
   }
 

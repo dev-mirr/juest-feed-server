@@ -1,22 +1,26 @@
 'use strict'
 
 module.exports = (sequelize, DataTypes) => {
-  const Post = sequelize.define('Feed', {
+  const Feed = sequelize.define('Feed', {
     id: {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
       type: DataTypes.INTEGER.UNSIGNED
     },
-    userUid: {
+    userUuid: {
       allowNull: false,
       type: DataTypes.INTEGER,
     },
-    creator: {
+    userId: {
       allowNull: false,
       type: DataTypes.STRING,
     },
-    post: {
+    title: {
+      allowNull: false,
+      type: DataTypes.STRING,
+    },
+    content: {
       allowNull: false,
       type: DataTypes.STRING,
     },
@@ -33,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: true,
   })
 
-  Post.associate = function(models) {
+  Feed.associate = function(models) {
     // associations
   }
 
